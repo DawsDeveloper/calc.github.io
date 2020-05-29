@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  
+  
+  <div class="container">
+
+  	<div class="box">
+
+  		<div class="left">
+     
+  			<span>PHP</h3> </span><br> <span>CALCULATOR</span>
+        
+        
+
+        <p  class="output">
+      
+    <?php
+    if (isset($_POST['submit'])) {
+      $num1=$_POST['num1'];
+      $num2=$_POST['num2'];
+      // echo "{$num1} {$num2}";
+      $operation=$_POST['operation'];
+
+      switch ($operation) {
+        case 'add':
+          $sum= $num1 + $num2;
+          echo " The Output is: $sum";
+          break;
+
+          case 'mul':
+          $mul= $num1 * $num2;
+          echo "The Output is: $mul";
+          break;
+
+          case 'sub':
+          $sub= $num1 - $num2;
+          echo "The Output is: $sub";
+          break;
+
+          case 'div':
+          $div= $num1 / $num2;
+          echo "The Output is: $div";
+          break;
+        
+        default:
+          # code...
+          break;
+      }
+
+    }
+
+    ?>
+
+    </p>
+    
+  			  		</div>
+
+
+  		<div class="right">
+  			<form method="POST">
+  				<input class="textBx" type="text" name="num1" placeholder="Enter Number"><br>
+  				<input class="textBx" type="text" name="num2" placeholder="Enter Number">
+  				<br>
+  			 <select class="optionBx" name="operation">
+  			 	<option value="add">Add</option>
+  			 	<option value="mul">Mul</option>
+  			 	<option value="sub">Sub</option>
+  			 	<option value="div">Div</option>
+  			 </select><br>
+  			 <input id="Btn" type="submit" name="submit" value="Calculate">
+  			</form>
+  		</div>
+
+    
+
+  	</div>
+
+  	
+  </div>
+
+    
+
+</body>
+</html>
